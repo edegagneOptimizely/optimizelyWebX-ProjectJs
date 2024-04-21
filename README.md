@@ -1,11 +1,11 @@
 # optimizely-ProjectJs
-Useful javascript functions to use in Optimizley Web Experimentation ProjectJs.
+Useful javascript code to use in Optimizley Web Experimentation ProjectJs.
 
 ## 1.) PJS-One Trust Consent
-This javascript function will check the One Trust OptanonConsent cookie and verify if consent is given for a specific OneTrust group.
+Javascript code to disable/enable Optimizely Web Experimentation based on OneTrust cookie acceptance.
 
 ## 2.) PJS-Scrolling Metrics
-These javascript functions will check scroll depth and raise an Optimizely custom event for specified scoll depths.
+Javascript code to track scroll depth and send as an Optimizely custom event for specified scroll depths.
 
 ## 3.) PJS-Session Count Tracking
-This javascript function will track session count as an Optimizely custom event.
+Javascript code to track visitor session count and send as an Optimizely custom event.

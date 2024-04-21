@@ -1,10 +1,11 @@
 ## PJS-Scrolling Metrics
-These javascript functions will check scroll depth and raise an Optimizely custom event for specified scoll depths.
+These javascript functions will check scroll depth and send an Optimizely custom event for specific scroll depths.
 
-Place the javascript in project js. Then create the following four (4) custom events:
-- Scroll 25 (scroll25)
-- Scroll 50 (scroll50)
-- Scroll 50 (scroll75)
-- Scroll 50 (scroll100)
+To use, place the javascript in your project js. Then, create the following four (4) custom events:
 
-These events will be available globally to use as instrumentation metrics in any campaigns or experiments.
+- Name: Scroll 25, Key: scroll25
+- Name: Scroll 50, Key: scroll50
+- Name: Scroll 75, Key: scroll75
+- Name: Scroll 100, Key: scroll100
+
+These events will be available globally to use as instrumentation metrics in any campaign or experiment.
