@@ -1,7 +1,6 @@
 window.optimizely = window.optimizely || [];    // Omit if already instantiating in current project js
 
-// Check OneTrust for consent to run Optimizely Web X
-function optiOneTrustCheck() {
+(() => {
 	const allowedGroup = 'C0003';		// Change this to the category used for Optimizely consent
 	const cookieName = 'OptanonConsent';
 	const cookies = document.cookie.split(';');
@@ -41,7 +40,5 @@ function optiOneTrustCheck() {
 	} else {
 		console.log('PJS: Optimizely enabled by consent');
 	}
-}
 
-// Call this function to check consent when project/snippet loads
-optiOneTrustCheck();
+})();

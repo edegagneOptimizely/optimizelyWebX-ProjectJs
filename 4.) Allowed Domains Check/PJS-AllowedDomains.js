@@ -1,10 +1,8 @@
 window.optimizely = window.optimizely || [];    // Omit if already instantiating in current project js
 
-// PJS: Check list of allowed domains - modify this list for your domain(s)
-var allowedOptimizelyDomains = ['firstdomain.com', 'seconddomain.com', 'sub.firstdomain.com'];
-
-// Check allowed Optimizely Web domains
-function checkOptimizelyDomains() {
+(() => {
+    // PJS: Check list of allowed domains - modify this list for your domain(s)
+    var allowedOptimizelyDomains = ['firstdomain.com', 'seconddomain.com', 'sub.firstdomain.com'];
     var currentDomain = window.location.hostname;
 
     // If not in the allowed list, disable Optimizely
@@ -16,7 +14,4 @@ function checkOptimizelyDomains() {
     } else {
         console.log(`PJS: ${currentDomain} is an allowed domain. Optimizely Web is enabled.`);
     }
-}
-
-// Call function to check if requested domain is allowed
-checkOptimizelyDomains();
+})();
