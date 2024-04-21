@@ -1,0 +1,46 @@
+window.optimizely = window.optimizely || [];  // Omit if already instantiating in current project js
+
+// PJS: Function to track session and keep track of session count
+function trackSession() {
+    const sessionIdName = 'opti_pjs_session_id';
+    const sessionCountName = 'opti_pjs_session_count';
+    const optiEventKey = 'sessionCount';
+
+    // Check if session storage is supported
+    if (typeof (Storage) !== "undefined") {
+        // Check if session ID exists in session storage
+        if (!sessionStorage.getItem(sessionIdName)) {
+            // Generate a random number and concatenate with current timestamp
+            var sessionId = Math.random().toString(36).substr(2, 9) + '_' + new Date().getTime();
+            var sessionCount = 0;
+
+            // If session ID doesn't exist, create a new one
+            sessionStorage.setItem(sessionIdName, sessionId);
+
+            // Get sessionCount if it exists
+            if (localStorage.getItem(sessionCountName)) {
+                sessionCount = parseInt(localStorage.getItem(sessionCountName));
+            }
+
+            // Increment session count and store
+            localStorage.setItem(sessionCountName, sessionCount + 1);
+
+            // Send opti event
+            window.optimizely.push({
+                type: "event",
+                eventName: optiEventKey,
+                tags: {
+                    value: 1
+                }
+            });
+        }
+
+        console.log("PJS: Total sessions: " + localStorage.getItem(sessionCountName));
+    } else {
+        // Session storage is not supported
+        console.log("PJS: Session storage is not supported. Cannot track sessions.");
+    }
+}
+
+// Call this function on every snippet load to track sessions
+trackSession();
