@@ -1,10 +1,13 @@
 window.optimizely = window.optimizely || [];    // Omit if already instantiating in current project js
 
 (() => {
-	const allowedGroup = 'C0003';		// Change this to the category used for Optimizely consent
-	const cookieName = 'OptanonConsent';
+	const allowedGroup = 'C0003';					// Change this to the category used for Optimizely consent
+	const cookieName = 'OptanonConsent';			// OneTrust consent cookie name, default: OptanonConsent	
+	const holdEvents = true;						// Hold events or disable Web X
+
 	const cookies = document.cookie.split(';');
 	let cookieValue = '';
+	let pushType = '';
 
 	// Get cookie value
 	for (let i = 0; i < cookies.length; i++) {
@@ -20,25 +23,32 @@ window.optimizely = window.optimizely || [];    // Omit if already instantiating
 	let consentGroups = null;
 
 	// Extract consent groups from cookie value
-	for (let i = 0; i < keyValuePairs.length; i++) {
-		const pair = keyValuePairs[i].split('=');
-		const key = pair[0];
-		const value = pair[1];
+	const pair = keyValuePairs.find(pair => pair.startsWith('groups='));
+	if (pair) {
+		consentGroups = pair.split('=')[1].split(',');
+	}
 
-		if (key === 'groups') {
-			consentGroups = value.split(',');
-			break;
+	// Check for consent opt out
+	if (consentGroups.indexOf(allowedGroup + ':0')) {
+		if (holdEvents) {
+			pushType = "holdEvents";
+			console.log('PJS: Optimizely holding events by consent');			
+		} else {
+			pushType = "disable";
+			console.log('PJS: Optimizely disabled by consent');			
+		}
+	} else {
+		if (holdEvents) {
+			pushType = "holdEvents";
+			console.log('PJS: Optimizely sending events by consent');			
+		} else {
+			console.log('PJS: Optimizely enabled by consent');
 		}
 	}
 
-	// Check for consent
-	if (!consentGroups.indexOf(allowedGroup + ':1')) {
-		console.log('PJS: Optimizely disabled by consent');
-		window.optimizely.push({
-			"type": "disable"
+	if (pushType) {
+		window["optimizely"].push({
+			"type": pushType				
 		});
-	} else {
-		console.log('PJS: Optimizely enabled by consent');
 	}
-
 })();
