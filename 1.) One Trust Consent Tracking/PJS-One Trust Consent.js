@@ -1,4 +1,4 @@
-window.optimizely = window.optimizely || [];    // Omit if already instantiating in current project js
+window.optimizely = window.optimizely || [];    	// Omit if already instantiating in project js
 
 (() => {
 	const allowedGroup = 'C0003';					// Change this to the category used for Optimizely consent
@@ -39,7 +39,7 @@ window.optimizely = window.optimizely || [];    // Omit if already instantiating
 		}
 	} else {
 		if (holdEvents) {
-			pushType = "holdEvents";
+			pushType = "sendEvents";
 			console.log('PJS: Optimizely sending events by consent');			
 		} else {
 			console.log('PJS: Optimizely enabled by consent');
