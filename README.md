@@ -1,4 +1,4 @@
-# optimizely-ProjectJs
+# optimizelyWebX-ProjectJs
 A collection of useful javascript code to use in Optimizley Web Experimentation project js.
 
 ## 1.) PJS-One Trust Consent
