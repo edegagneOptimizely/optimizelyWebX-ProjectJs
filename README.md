@@ -11,5 +11,5 @@ A collection of useful javascript code to use in Optimizley Web Experimentation 
 * **Session Count Tracking** track visitor session count and send as an Optimizely custom event.
 
 <p align="center">
-  <img src="./img/pjs.png" alt="Opti Web Project Js">
+  <img src="img/pjs.png" alt="Opti Web Project Js">
 </p>
