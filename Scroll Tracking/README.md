@@ -1,4 +1,4 @@
-## PJS-Scrolling Metrics
+## Scroll Tracking
 These javascript functions will check scroll depth and send an Optimizely custom event for specific scroll depths.
 
 To use, place the javascript in your project js. Then, create the following four (4) custom events:
