@@ -1,5 +1,5 @@
 # optimizely-ProjectJs
-Collection of useful javascript code to use in Optimizley Web Experimentation project js.
+A collection of useful javascript code to use in Optimizley Web Experimentation project js.
 
 ## 1.) PJS-One Trust Consent
 Javascript code to disable/enable Optimizely based on OneTrust cookie acceptance settings.
