@@ -1,7 +1,6 @@
 # Optimizely Web Experimentation - Project Js
 
-<img src="img/opti_logo.png" align="right"
-     alt="Optimizely" width="120" height="120">
+<img src="img/opti_logo.png" align="right" alt="Optimizely" width="120" height="120">
 
 A collection of useful javascript code to use in Optimizley Web Experimentation project js.
 
@@ -11,5 +10,5 @@ A collection of useful javascript code to use in Optimizley Web Experimentation 
 * **Session Count Tracking** track visitor session count and send as an Optimizely custom event.
 
 <p align="center">
-  <img src="img/pjs.png" alt="Opti Web Project Js">
+  <img src="img/projjs.png" alt="Opti Web Project Js">
 </p>
