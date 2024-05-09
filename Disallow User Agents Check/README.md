@@ -1,4 +1,4 @@
-# Disallow User Agents Check
+## Disallow User Agents Check
 
 <img src="../img/opti_logo.png" align="right" alt="Optimizely" width="60" height="60" />
 
