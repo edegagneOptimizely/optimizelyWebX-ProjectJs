@@ -4,6 +4,8 @@
 
 Populate and push a custom attribute for segmenting results by visit type. Attribute will be populated with 'New' or 'Returning' values dependent upon the optimizely.get('visitor').first_session value.
 
+This code subscribes to the Optimizely "activated" listener. This ensures that the Optimizely visitor object is populated before accessing visitor information.
+
 <p align="left">
   <img src="../img/visitor_type.png" alt="Visitor type segmentation" width="750" border="1" style="border: 1px solid grey;" />
 </p>
