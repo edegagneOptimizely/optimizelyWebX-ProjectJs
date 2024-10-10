@@ -29,7 +29,7 @@ window.optimizely = window.optimizely || [];    	// Omit if already instantiatin
 	}
 
 	// Check for consent opt out
-	if (consentGroups.indexOf(allowedGroup + ':0')) {
+	if (consentGroups.indexOf(allowedGroup + ':0') !== -1) {
 		if (holdEvents) {
 			pushType = "holdEvents";
 			console.log('PJS: Optimizely holding events by consent');			
