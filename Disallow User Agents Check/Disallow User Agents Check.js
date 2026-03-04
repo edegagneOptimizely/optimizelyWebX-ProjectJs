@@ -2,7 +2,7 @@ window.optimizely = window.optimizely || []; // Omit if already instantiating in
 
 (() => {
   // PJS: Configure your disallowed user agents here
-  const optlyUserAgentList = ["Prerender", "PetalBot", "Checkly"];
+  const disallowedUserAgents = new Set(["prerender", "petalbot", "checkly", "meta-externalagent"]);
 
   if (isUserAgentBot()) {   
     window.optimizely.push({
@@ -11,17 +11,14 @@ window.optimizely = window.optimizely || []; // Omit if already instantiating in
   }
 
   function isUserAgentBot() {
+    const lowerUserAgent = navigator.userAgent.toLowerCase();
     
-    var result = false;
-    var lowerUserAgent = navigator.userAgent.toLowerCase();  
-    for (var i = 0; i < optlyUserAgentList.length; i++) {
-      if (lowerUserAgent.includes(optlyUserAgentList[i].toLowerCase())) {
-        // User agent is in the list
+    for (const agent of disallowedUserAgents) {
+      if (lowerUserAgent.includes(agent)) {
         console.log(`PJS: ${navigator.userAgent} is not an allowed user agent. Optimizely Web will be disabled.`);
-        result = true;
-        break;
+        return true;
       }    
     }
-    return result;
+    return false;
   }
 })();
