@@ -4,7 +4,8 @@ window.optimizely = window.optimizely || []; // Omit if already instantiating in
   // PJS: Configure your disallowed user agents here
   const disallowedUserAgents = new Set(["prerender", "petalbot", "checkly", "meta-externalagent"]);
 
-  if (isUserAgentBot()) {   
+	// PJS: Disable Opti Web X if request agent is disallowed
+  if (isDisallowedAgent()) {   
     window.optimizely.push({
       "type": "disable"
     });
