@@ -11,7 +11,7 @@ window.optimizely = window.optimizely || []; // Omit if already instantiating in
     });
   }
 
-  function isUserAgentBot() {
+  function isDisallowedAgent() {
     const lowerUserAgent = navigator.userAgent.toLowerCase();
     
     for (const agent of disallowedUserAgents) {
