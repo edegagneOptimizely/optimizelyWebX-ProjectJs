@@ -1,11 +1,13 @@
-# Optimizely Web Experimentation - Project Js
+<img src="img/opti_logo.svg" alt="Optimizely" align="right" style="width:150px;" />
 
-<img src="img/opti_logo.png" align="right" alt="Optimizely" width="60" height="60" />
+# Web Experimentation - Project Js
 
-A collection of useful javascript code to use in Optimizley Web Experimentation project js.
+<p align="left" style="">
+  A collection of useful javascript code to use in Optimizley Web Experimentation project js.
+</p>
 
 <p align="left" style="margin-top:1rem;">
-  <img src="img/projjs.png" alt="Opti Web Project Js" width="700" style="border: 1px solid grey;">
+  <img src="img/projjs.png" alt="Opti Web Project Js" width="500" style="border: 1px solid grey;">
 </p>
 
 This repository contains javascript for the following functionality:
