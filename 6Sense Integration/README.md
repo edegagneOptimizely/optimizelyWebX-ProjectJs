@@ -1,6 +1,9 @@
-## 6Sense Integration
 
-<img src="../img/opti_logo.png" align="right" alt="Optimizely" width="60" height="60" />
+
+## ![Optimizely](../img/opti_logo_120.svg) 
+
+### 6Sense Integration
+
 
 Use [6Sense Integration.js](./6Sense%20Integration.js) in Optimizely Web Experimentation Project JavaScript to make 6sense company data available for audience targeting.
 
@@ -18,3 +21,9 @@ Use [6Sense Integration.js](./6Sense%20Integration.js) in Optimizely Web Experim
 Set `_6senseDebug` near the top of the script to `true` to log polling, timeouts, queued attribute names, and queued activation in the browser console. Set it to `false` to disable these messages. Attribute values are not logged.
 
 To test, copy the code into your browser dev tools console and press enter.
+
+#### Console log output
+
+<p align="left">
+  <img src="../img/6sense_log.png" alt="Integration testing cosole log" width="750" border="1" style="border: 1px solid grey;" />
+</p>
